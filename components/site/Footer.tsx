@@ -45,7 +45,7 @@ export function Footer() {
                 if (!err) setSubscribed(true);
               }}
             >
-              <label htmlFor="footer-email" className="font-mono text-eyebrow uppercase text-gray-500">
+              <label htmlFor="footer-email" className="font-mono text-eyebrow uppercase text-gray-400">
                 Newsletter
               </label>
               {subscribed ? (
@@ -82,13 +82,13 @@ export function Footer() {
           </div>
           {footerColumns.map((col) => (
             <nav key={col.heading} aria-label={col.heading}>
-              <p className="font-mono text-eyebrow uppercase text-gray-500">{col.heading}</p>
+              <p className="font-mono text-eyebrow uppercase text-gray-400">{col.heading}</p>
               <ul className="mt-6 space-y-2">
                 {col.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="block py-px text-body-sm text-gray-300 transition-colors duration-micro ease-out-quad hover:text-white"
+                      className="flex min-h-11 items-center text-body-sm text-gray-300 transition-colors duration-micro ease-out-quad hover:text-white"
                     >
                       {link.label}
                     </Link>
@@ -100,7 +100,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col justify-between gap-6 border-t border-gray-800 pt-8 md:flex-row md:items-center">
-          <p className="text-body-sm text-gray-500">
+          <p className="text-body-sm text-gray-400">
             &copy; {new Date().getFullYear()} Amperity, Inc. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-6">
@@ -110,15 +110,21 @@ export function Footer() {
                 href={s.href}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-body-sm text-gray-400 hover:text-white"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center text-body-sm text-gray-400 hover:text-white"
               >
                 {s.label}
               </a>
             ))}
-            <Link href="/about" className="text-body-sm text-gray-400 hover:text-white">
+            <Link
+              href="/about"
+              className="inline-flex min-h-11 items-center text-body-sm text-gray-400 hover:text-white"
+            >
               Privacy
             </Link>
-            <Link href="/about" className="text-body-sm text-gray-400 hover:text-white">
+            <Link
+              href="/about"
+              className="inline-flex min-h-11 items-center text-body-sm text-gray-400 hover:text-white"
+            >
               Terms
             </Link>
           </div>

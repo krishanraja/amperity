@@ -8,7 +8,7 @@ export function Manifesto() {
         <div className="space-y-20 lg:space-y-24">
           {manifesto.beats.map((beat, i) => (
             <div key={i} className="grid gap-6 lg:grid-cols-12">
-              <p className="font-mono text-eyebrow text-gray-500 lg:col-span-2">
+              <p className="font-mono text-eyebrow text-gray-400 lg:col-span-2">
                 {String(i + 1).padStart(2, "0")}
               </p>
               <Reveal

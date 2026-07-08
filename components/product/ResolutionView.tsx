@@ -57,17 +57,20 @@ export function ResolutionView({ className }: { className?: string }) {
             {FRAGMENTS.map((f, i) => (
               <motion.div
                 key={f.source}
-                animate={{
-                  opacity: merged(i) ? 0.38 : 1,
-                  x: merged(i) ? 10 : 0,
-                }}
+                animate={{ x: merged(i) ? 10 : 0 }}
                 transition={{ duration: 0.5, ease: easingArray.outExpo }}
-                className={`items-center justify-between rounded-card border px-4 py-2 ${
+                className={`items-center justify-between rounded-card border px-4 py-2 transition-colors duration-ui ease-out-quad ${
                   f.mobile ? "flex" : "hidden md:flex"
                 } ${merged(i) ? "border-gray-200" : "border-gray-300"}`}
               >
                 <div className="min-w-0">
-                  <p className="truncate text-body-sm font-medium">{f.name}</p>
+                  <p
+                    className={`truncate text-body-sm font-medium transition-colors duration-ui ease-out-quad ${
+                      merged(i) ? "text-gray-500" : "text-gray-900"
+                    }`}
+                  >
+                    {f.name}
+                  </p>
                   <p className="truncate text-body-sm text-gray-500">{f.detail}</p>
                 </div>
                 <span className="ml-4 shrink-0 font-mono text-body-sm text-gray-500">
@@ -117,15 +120,25 @@ export function ResolutionView({ className }: { className?: string }) {
               {FIELDS.map((f, i) => {
                 const visible = reduced || s > i + 1;
                 return (
-                  <motion.div
+                  <div
                     key={f.label}
-                    animate={{ opacity: visible ? 1 : 0.25 }}
-                    transition={{ duration: 0.4 }}
                     className="flex items-baseline justify-between gap-4 border-b border-gray-700 pb-2"
                   >
-                    <dt className="font-mono text-body-sm text-gray-400">{f.label}</dt>
-                    <dd className="text-body-sm font-medium">{visible ? f.value : "..."}</dd>
-                  </motion.div>
+                    <dt
+                      className={`font-mono text-body-sm transition-colors duration-ui ease-out-quad ${
+                        visible ? "text-gray-300" : "text-gray-400"
+                      }`}
+                    >
+                      {f.label}
+                    </dt>
+                    <dd
+                      className={`text-body-sm font-medium transition-colors duration-ui ease-out-quad ${
+                        visible ? "text-white" : "text-gray-400"
+                      }`}
+                    >
+                      {visible ? f.value : "..."}
+                    </dd>
+                  </div>
                 );
               })}
             </dl>

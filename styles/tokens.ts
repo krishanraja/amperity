@@ -94,6 +94,7 @@ export const spacing = {
   6: "1.5rem", // 24px
   8: "2rem", // 32px
   10: "2.5rem", // 40px
+  11: "2.75rem", // 44px: the touch-target floor, an accessibility constant, not a rhythm step
   12: "3rem", // 48px
   14: "3.5rem", // 56px
   16: "4rem", // 64px

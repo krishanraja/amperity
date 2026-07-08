@@ -74,11 +74,17 @@ export function AmpAIExchange({ className }: { className?: string }) {
                     return (
                       <motion.li
                         key={c}
-                        animate={{ opacity: visible ? 1 : 0.2, x: visible ? 0 : -6 }}
+                        animate={{ x: visible ? 0 : -6 }}
                         transition={{ duration: 0.4, ease: easingArray.outExpo }}
-                        className="flex items-center gap-2 font-mono text-body-sm text-gray-300"
+                        className={`flex items-center gap-2 font-mono text-body-sm transition-colors duration-ui ease-out-quad ${
+                          visible ? "text-gray-300" : "text-gray-400"
+                        }`}
                       >
-                        <Icon name="check" size={14} className="shrink-0 text-chartreuse" />
+                        <Icon
+                          name="check"
+                          size={14}
+                          className={`shrink-0 ${visible ? "text-chartreuse" : "text-gray-400"}`}
+                        />
                         {c}
                       </motion.li>
                     );

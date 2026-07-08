@@ -116,6 +116,33 @@ with zero console errors.
   ampersand cropped at the bottom edge at 10% opacity. Mobile stacks
   cleanly. No changes.
 
+## Run-1 gate findings (cycle: full-page and Lighthouse)
+
+- Full-page rhythm verified at 390/430/768/1024/1440: dark hero, light
+  train, dark manifesto, light chapters, light proof, dark stack, light
+  teams, ticker, dark closing, footer. Section scale varies as chapters,
+  not as uniform bands.
+- Production-only defect found by Lighthouse: next/image's optimizer
+  400s SVG sources, silently breaking every logo in prod (dev serves
+  them). Fixed with images.unoptimized (all site images are brand SVGs
+  or pre-sized PNGs).
+- LCP: the hydration-gated hero reveal cost seconds on throttled mobile.
+  Moved the hero entrance to pure CSS (same masked stagger, starts at
+  first paint). Desktop LCP 0.6s, CLS 0 everywhere.
+- Contrast: gray-500 on gray-900 measures 3.5:1, below AA. All
+  dark-surface gray-500 text lifted to gray-400; the product-art idle
+  loops now dim via color-token swaps instead of opacity, so every
+  frame of the animation is AA-compliant.
+- Device matrix (375/390/430/768/1024/1440/1920): zero horizontal
+  overflow; hero headline, subhead, and primary CTA inside the first
+  100svh at 375 after tightening mobile-only rhythm; no sub-44px touch
+  targets on touch layouts (footer links given the 44px floor; the
+  8px spacing scale gained a documented 44px accessibility constant).
+- 4x CPU throttle: 61fps page loop (canvas internally capped at 30).
+- Final Lighthouse (production): desktop 100/100/96/100, mobile
+  95/100/96/100. The best-practices deduction on both is console 404s
+  from prefetching Run-2 routes that do not exist yet.
+
 ## Header states (cycle 1)
 
 - Transparent over the dark hero with the official white wordmark;

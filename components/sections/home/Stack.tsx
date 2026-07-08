@@ -8,7 +8,7 @@ export function Stack() {
   return (
     <section className="grain relative bg-gray-900 py-section-m text-white lg:py-section">
       <div className="mx-auto max-w-site px-gutter lg:px-gutter-lg">
-        <p className="font-mono text-eyebrow uppercase text-gray-500">{stack.eyebrow}</p>
+        <p className="font-mono text-eyebrow uppercase text-gray-400">{stack.eyebrow}</p>
         <Reveal
           lines={stack.headlineLines}
           className="mt-6 font-display text-display font-medium"

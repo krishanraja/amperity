@@ -332,7 +332,7 @@ function MobileSheet({ onClose }: { onClose: () => void }) {
                         <div className="grid gap-8 pb-6 pt-2 sm:grid-cols-2">
                           {item.columns.map((col) => (
                             <div key={col.heading}>
-                              <p className="font-mono text-eyebrow uppercase text-gray-500">
+                              <p className="font-mono text-eyebrow uppercase text-gray-400">
                                 {col.heading}
                               </p>
                               <ul className="mt-4 space-y-1">

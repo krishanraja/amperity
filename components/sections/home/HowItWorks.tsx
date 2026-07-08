@@ -51,7 +51,7 @@ export function HowItWorks() {
                   </p>
                   <p className="mt-2 text-body-sm text-gray-600">
                     {stat.label}
-                    <span className="text-gray-400"> &middot; {stat.customer}</span>
+                    <span className="text-gray-500"> &middot; {stat.customer}</span>
                   </p>
                   <Link
                     href={c.href}
