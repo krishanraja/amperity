@@ -37,8 +37,8 @@ for (const width of widths) {
     hasTouch: width < 768,
   });
   const page = await context.newPage();
-  await page.goto(url, { waitUntil: "networkidle" });
-  await page.waitForTimeout(600);
+  await page.goto(url, { waitUntil: "load", timeout: 45000 });
+  await page.waitForTimeout(1200);
   // Settle scroll-triggered reveals for full-page captures
   if (fullPage) {
     await page.evaluate(async () => {
