@@ -29,15 +29,12 @@ export function StickyChapter({ chapters }: { chapters: Chapter[] }) {
   });
   const n = chapters.length;
 
-  if (reduced) {
-    return <StackedChapters chapters={chapters} />;
-  }
-
   return (
-    <>
-      {/* Desktop: pinned, scroll-scrubbed */}
+    <div ref={ref}>
+      {/* Desktop: pinned, scroll-scrubbed. Removed entirely under
+          reduced motion, where the stacked layout serves all widths. */}
+      {!reduced && (
       <div
-        ref={ref}
         className="hidden lg:block"
         style={{ height: `${n * 120}vh` }}
       >
@@ -68,33 +65,28 @@ export function StickyChapter({ chapters }: { chapters: Chapter[] }) {
           </div>
         </div>
       </div>
+      )}
       {/* Touch and small screens: stacked, no pinning */}
-      <div className="lg:hidden">
+      <div className={reduced ? "" : "lg:hidden"}>
         <StackedChapters chapters={chapters} />
       </div>
-    </>
+    </div>
   );
 }
 
 function useChapterWindow(progress: MotionValue<number>, index: number, count: number) {
   // Each chapter owns an equal slice of scroll progress; crossfade at
-  // the seams. The visual state maps continuously to scrollbar position.
+  // the seams. Computed explicitly so the value maps continuously to
+  // scrollbar position and clamps outside the chapter's window.
   const start = index / count;
   const end = (index + 1) / count;
   const fade = 0.18 / count;
-  return useTransform(
-    progress,
-    index === 0
-      ? [start, end - fade, end]
-      : index === count - 1
-        ? [start, start + fade, end]
-        : [start, start + fade, end - fade, end],
-    index === 0
-      ? [1, 1, 0]
-      : index === count - 1
-        ? [0, 1, 1]
-        : [0, 1, 1, 0],
-  );
+  return useTransform(progress, (p: number) => {
+    const fadeIn = index === 0 ? 1 : Math.min(1, Math.max(0, (p - start) / fade));
+    const fadeOut =
+      index === count - 1 ? 1 : Math.min(1, Math.max(0, (end - p) / fade));
+    return Math.min(fadeIn, fadeOut);
+  });
 }
 
 function ChapterCopy({
@@ -112,6 +104,7 @@ function ChapterCopy({
   const y = useTransform(opacity, [0, 1], [16, 0]);
   return (
     <motion.div
+      data-chapter-copy={chapter.id}
       style={{ opacity, y }}
       className={index === 0 ? "relative" : "absolute inset-0 flex flex-col justify-center"}
     >
@@ -135,6 +128,7 @@ function ChapterVisual({
   const scale = useTransform(opacity, [0, 1], [0.97, 1]);
   return (
     <motion.div
+      data-chapter-visual={chapter.id}
       style={{ opacity, scale }}
       className={index === 0 ? "relative" : "absolute inset-0 flex items-center"}
     >

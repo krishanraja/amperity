@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useReducedMotion } from "framer-motion";
 
 function useMediaQuery(query: string, initial = false): boolean {
   const [matches, setMatches] = useState(initial);
@@ -25,9 +24,14 @@ export function useIsMobile(): boolean {
   return useMediaQuery("(max-width: 767px)");
 }
 
-/** Save-Data and prefers-reduced-motion are respected identically. */
+/**
+ * Save-Data and prefers-reduced-motion are respected identically.
+ * Effect-based (server and first client render both report false) so
+ * SSR markup always matches hydration; the static variant swaps in
+ * before any animation plays.
+ */
 export function useReducedOrSaveData(): boolean {
-  const reduced = useReducedMotion();
+  const reduced = useMediaQuery("(prefers-reduced-motion: reduce)");
   const [saveData, setSaveData] = useState(false);
   useEffect(() => {
     setSaveData(
@@ -35,5 +39,5 @@ export function useReducedOrSaveData(): boolean {
         Boolean((navigator as { connection?: { saveData?: boolean } }).connection?.saveData),
     );
   }, []);
-  return Boolean(reduced) || saveData;
+  return reduced || saveData;
 }

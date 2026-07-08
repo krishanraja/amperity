@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { ViewTransitions } from "next-view-transitions";
 import { inter, jetbrainsMono, spaceGrotesk } from "./fonts";
+import { Header } from "@/components/site/Header";
+import { Footer } from "@/components/site/Footer";
 import { chartreuse } from "@/styles/tokens";
 import "@/styles/globals.css";
 
@@ -12,6 +14,14 @@ export const metadata: Metadata = {
   },
   description:
     "Amperity resolves fragmented customer data into trusted, real-time context, so every team and every AI agent acts on the same truth.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "48x48" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
@@ -36,7 +46,9 @@ export default function RootLayout({
           >
             Skip to content
           </a>
+          <Header />
           {children}
+          <Footer />
         </body>
       </html>
     </ViewTransitions>

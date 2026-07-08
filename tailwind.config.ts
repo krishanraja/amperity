@@ -44,6 +44,9 @@ const config: Config = {
         site: maxWidth.site,
         measure: maxWidth.measure,
       },
+      scale: {
+        98: "0.98",
+      },
     },
   },
   plugins: [],
