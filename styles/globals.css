@@ -68,6 +68,28 @@
   }
 }
 
+/* Marquee: infinite transform loop over duplicated content. Paused on
+   hover; disabled entirely under reduced motion (the component renders a
+   static row instead). */
+.marquee-track {
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.group:hover > .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* Route transitions: 300ms crossfade with a 12px slide, hard cut fallback.
    Duration and easing come from the motion tokens. */
 ::view-transition-old(root) {
