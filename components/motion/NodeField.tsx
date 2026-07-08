@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { createRng, generateNodes, pickCluster, staticFrame } from "@/lib/node-field.mjs";
-import { chartreuse } from "@/styles/tokens";
+import { chartreuse, white } from "@/styles/tokens";
 
 type FieldNode = {
   x: number;
@@ -58,7 +58,7 @@ export function NodeField({
   density = 1.1,
   speed = 1,
   seed = 7,
-  dotColor = "#ffffff",
+  dotColor = white,
   className,
 }: NodeFieldProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
