@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-optical-sizing: auto;
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-white font-sans text-body text-gray-900;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  blockquote {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-chartreuse text-black;
+  }
+
+  /* Visible focus for every interactive element: 2px chartreuse offset ring */
+  :focus-visible {
+    @apply outline-none ring-2 ring-chartreuse ring-offset-2 ring-offset-white;
+  }
+
+  .dark-section :focus-visible,
+  [data-theme="dark"] :focus-visible {
+    @apply ring-offset-gray-900;
+  }
+}
+
+@layer utilities {
+  /* Tabular numerals for counters and stats so digits never jitter */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Safe-area padding for notched and home-indicator devices */
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .px-safe {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Full-viewport sections: svh only, never 100vh */
+  .min-h-viewport {
+    min-height: 100svh;
+  }
+}
+
+/* Route transitions: 300ms crossfade with a 12px slide, hard cut fallback.
+   Duration and easing come from the motion tokens. */
+::view-transition-old(root) {
+  animation: vt-out 300ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+::view-transition-new(root) {
+  animation: vt-in 300ms cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+@keyframes vt-out {
+  to {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
