@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Counter } from "@/components/motion/Counter";
-import { Reveal, RevealBlock } from "@/components/motion/Reveal";
+import { CssHeadline } from "@/components/templates/CssHeadline";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/icons";
 import { CustomerGrid } from "@/components/sections/CustomerGrid";
@@ -32,17 +32,16 @@ export default function CustomersIndexPage() {
     <main id="main">
       {/* Featured hero */}
       <section className="relative overflow-hidden bg-gray-900 px-safe text-white">
-        <StoryArt slug={featured.slug} className="absolute inset-0 h-full w-full opacity-70" />
+        <StoryArt slug={featured.slug} variant="hero" className="absolute inset-0 h-full w-full opacity-70" />
         <div className="relative z-10 mx-auto max-w-site px-gutter pb-section-m pt-32 md:pt-40 lg:px-gutter-lg">
           <p className="font-mono text-eyebrow uppercase text-gray-400">
             FEATURED &middot; {featured.industry.toUpperCase()}
           </p>
-          <Reveal
-            as="h1"
+          <CssHeadline
             lines={["The fans hiding", "in the data."]}
             className="mt-6 max-w-headline font-display text-display font-medium"
           />
-          <RevealBlock delay={0.2} className="mt-8 flex flex-wrap gap-x-12 gap-y-6">
+          <div className="mt-8 flex flex-wrap gap-x-12 gap-y-6">
             <div>
               <Counter
                 value={featuredStat.value}
@@ -60,8 +59,8 @@ export default function CustomersIndexPage() {
               />
               <p className="mt-1 font-mono text-body-sm text-gray-400">{secondStat.label}</p>
             </div>
-          </RevealBlock>
-          <RevealBlock delay={0.3} className="mt-10">
+          </div>
+          <div className="hero-fade hero-fade-2 mt-10">
             <Link
               href={`/customers/${featured.slug}`}
               className="group inline-flex min-h-12 items-center gap-2 rounded-pill bg-chartreuse px-8 text-body font-medium text-black transition duration-micro ease-out-quad hover:bg-white active:scale-98"
@@ -69,7 +68,7 @@ export default function CustomersIndexPage() {
               Read the Seahawks story
               <Icon name="arrow-right" size={16} className="transition-transform duration-micro ease-out-quad group-hover:translate-x-1" />
             </Link>
-          </RevealBlock>
+          </div>
         </div>
       </section>
 

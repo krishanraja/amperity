@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Counter } from "@/components/motion/Counter";
-import { Reveal, RevealBlock } from "@/components/motion/Reveal";
+import { CssHeadline } from "./CssHeadline";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/icons";
 import { CtaBand } from "./Sections";
@@ -22,14 +22,13 @@ export function CustomerStoryPage({ story }: { story: CustomerStory }) {
   return (
     <main id="main">
       <section className="relative overflow-hidden bg-gray-900 px-safe text-white">
-        <StoryArt slug={story.slug} className="absolute inset-0 h-full w-full opacity-70" />
+        <StoryArt slug={story.slug} variant="hero" className="absolute inset-0 h-full w-full opacity-70" />
         <div className="relative z-10 mx-auto max-w-site px-gutter pb-section-m pt-32 md:pt-40 lg:px-gutter-lg">
           <p className="font-mono text-eyebrow uppercase text-gray-400">
             {story.industry.toUpperCase()}
           </p>
           <p className="mt-6 font-display text-h2 font-medium text-white">{story.name}</p>
-          <Reveal
-            as="h1"
+          <CssHeadline
             lines={full ? full.headlineLines : [story.teaser]}
             className="mt-4 max-w-headline font-display text-display font-medium"
           />

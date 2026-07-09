@@ -33,7 +33,7 @@ export default function SolutionsIndexPage() {
       {/* Functions */}
       <section className="bg-white py-section-m lg:py-section">
         <div className="mx-auto max-w-site px-gutter lg:px-gutter-lg">
-          <p className="font-mono text-eyebrow uppercase text-gray-500">FUNCTIONS</p>
+          <h2 className="font-mono text-eyebrow uppercase text-gray-500">FUNCTIONS</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {Object.values(functions).map((fn, i) => (
               <RevealBlock key={fn.slug} delay={i * 0.06} className="h-full">
@@ -53,7 +53,7 @@ export default function SolutionsIndexPage() {
       {/* Industries */}
       <section className="bg-gray-50 py-section-m lg:py-section">
         <div className="mx-auto max-w-site px-gutter lg:px-gutter-lg">
-          <p className="font-mono text-eyebrow uppercase text-gray-500">INDUSTRIES</p>
+          <h2 className="font-mono text-eyebrow uppercase text-gray-500">INDUSTRIES</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {Object.values(industries).map((ind, i) => (
               <RevealBlock key={ind.slug} delay={i * 0.04} className="h-full">

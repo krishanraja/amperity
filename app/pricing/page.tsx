@@ -32,7 +32,7 @@ export default function PricingPage() {
       {/* The Amps model */}
       <section className="bg-gray-50 py-section-m lg:py-section">
         <div className="mx-auto max-w-site px-gutter lg:px-gutter-lg">
-          <p className="font-mono text-eyebrow uppercase text-gray-500">THE AMPS MODEL</p>
+          <h2 className="font-mono text-eyebrow uppercase text-gray-500">THE AMPS MODEL</h2>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {ampsPoints.map((p) => (
               <div key={p.title} className="flex gap-6 rounded-card border border-gray-200 bg-white p-8">

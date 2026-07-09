@@ -125,6 +125,26 @@
   }
 }
 
+/* Filter-grid reflow: the grid re-fades when its key (the active
+   filter) changes. Cards paint immediately on first load, so LCP is not
+   gated by JS; only subsequent filter changes animate. */
+.grid-fade {
+  animation: grid-fade-in 300ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes grid-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grid-fade {
+    animation: none;
+  }
+}
+
 /* Print-grain texture via feTurbulence, dark manifesto sections only,
    very low opacity. The single allowed ornament. */
 .grain::before {

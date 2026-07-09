@@ -1,12 +1,13 @@
-import { Reveal, RevealBlock } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
+import { CssHeadline } from "./CssHeadline";
 
 type Cta = { label: string; href: string };
 
 /**
  * Standard top-of-page hero for every non-home route. Light by default,
- * dark variant for flagship pages. Reveal headline, subhead, and up to
- * two CTAs. Sits below the fixed header, so it carries top padding.
+ * dark variant for flagship pages. The entrance is CSS-driven (see
+ * .hero-line / .hero-fade in globals.css) so above-the-fold content
+ * paints at first render rather than after hydration, keeping LCP low.
  */
 export function PageHero({
   eyebrow,
@@ -33,16 +34,15 @@ export function PageHero({
         <p className={`font-mono text-eyebrow uppercase ${dark ? "text-gray-400" : "text-gray-500"}`}>
           {eyebrow}
         </p>
-        <Reveal
-          as="h1"
+        <CssHeadline
           lines={headlineLines}
           className="mt-6 max-w-headline font-display text-display font-medium"
         />
-        <RevealBlock delay={0.2} className="mt-8 max-w-measure">
+        <div className="hero-fade hero-fade-1 mt-8 max-w-measure">
           <p className={`text-lead ${dark ? "text-gray-300" : "text-gray-600"}`}>{subhead}</p>
-        </RevealBlock>
+        </div>
         {(primaryCta || secondaryCta) && (
-          <RevealBlock delay={0.35} className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <div className="hero-fade hero-fade-2 mt-10 flex flex-col gap-4 sm:flex-row">
             {primaryCta && (
               <Button href={primaryCta.href} magnetic arrow tone={dark ? "dark" : "light"}>
                 {primaryCta.label}
@@ -53,7 +53,7 @@ export function PageHero({
                 {secondaryCta.label}
               </Button>
             )}
-          </RevealBlock>
+          </div>
         )}
         {children}
       </div>

@@ -14,6 +14,7 @@ export function ResourceGrid() {
 
   return (
     <div>
+      <h2 className="sr-only">Resources</h2>
       <FilterChips options={resourceTypes} active={type} onChange={setType} allLabel="All" />
       <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {filtered.map((r) => (

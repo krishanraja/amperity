@@ -28,6 +28,7 @@ export function IntegrationGrid() {
 
   return (
     <div>
+      <h2 className="sr-only">Integration library</h2>
       <div className="flex flex-col gap-6">
         <label className="relative block">
           <span className="sr-only">Search integrations</span>

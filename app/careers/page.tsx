@@ -27,7 +27,7 @@ export default function CareersPage() {
       {/* Values */}
       <section className="bg-gray-50 py-section-m lg:py-section">
         <div className="mx-auto max-w-site px-gutter lg:px-gutter-lg">
-          <p className="font-mono text-eyebrow uppercase text-gray-500">HOW WE WORK</p>
+          <h2 className="font-mono text-eyebrow uppercase text-gray-500">HOW WE WORK</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {values.map((v) => (
               <div key={v.title} className="rounded-card border border-gray-200 bg-white p-8">

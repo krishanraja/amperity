@@ -24,6 +24,7 @@ export function UseCaseGrid() {
 
   return (
     <div>
+      <h2 className="sr-only">Use-case library</h2>
       <div className="space-y-4">
         <div>
           <p className="mb-2 font-mono text-eyebrow uppercase text-gray-500">Category</p>

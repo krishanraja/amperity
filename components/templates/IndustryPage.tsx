@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Counter } from "@/components/motion/Counter";
 import { Reveal, RevealBlock } from "@/components/motion/Reveal";
+import { CssHeadline } from "./CssHeadline";
 import { Accordion } from "@/components/ui/Accordion";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -26,19 +27,18 @@ export function IndustryPage({ data }: { data: IndustryData }) {
     <main id="main">
       {/* Hero with seeded story art */}
       <section className="relative overflow-hidden bg-gray-900 px-safe text-white">
-        <StoryArt slug={`industry-${data.slug}`} className="absolute inset-0 h-full w-full opacity-70" />
+        <StoryArt slug={`industry-${data.slug}`} variant="hero" className="absolute inset-0 h-full w-full opacity-70" />
         <div className="relative z-10 mx-auto max-w-site px-gutter pb-section-m pt-32 md:pt-40 lg:px-gutter-lg">
           <p className="font-mono text-eyebrow uppercase text-gray-400">{data.eyebrow}</p>
-          <Reveal
-            as="h1"
+          <CssHeadline
             lines={data.headlineLines}
             className="mt-6 max-w-headline font-display text-display font-medium"
           />
-          <RevealBlock delay={0.2} className="mt-8 max-w-measure">
+          <div className="hero-fade hero-fade-1 mt-8 max-w-measure">
             <p className="text-lead text-gray-300">{data.subhead}</p>
-          </RevealBlock>
+          </div>
           {data.featuredCustomer && (
-            <RevealBlock delay={0.3} className="mt-8 flex items-baseline gap-4">
+            <div className="mt-8 flex items-baseline gap-4">
               <Counter
                 value={stat.value}
                 decimals={stat.decimals ?? 0}
@@ -48,13 +48,13 @@ export function IndustryPage({ data }: { data: IndustryData }) {
               <span className="font-mono text-body-sm text-gray-400">
                 {stat.label} &middot; {data.featuredCustomer}
               </span>
-            </RevealBlock>
+            </div>
           )}
-          <RevealBlock delay={0.4} className="mt-10">
+          <div className="hero-fade hero-fade-2 mt-10">
             <Button href="/resources/demo/request" magnetic arrow>
               Request a demo
             </Button>
-          </RevealBlock>
+          </div>
         </div>
       </section>
 

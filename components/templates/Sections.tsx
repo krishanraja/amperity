@@ -47,7 +47,14 @@ export function PointsGrid({
   return (
     <section className="bg-white py-section-m lg:py-section">
       <div className="mx-auto max-w-site px-gutter lg:px-gutter-lg">
-        {eyebrow && <p className="font-mono text-eyebrow uppercase text-gray-500">{eyebrow}</p>}
+        {/* When there is no big headline, the eyebrow is the section's
+            heading, so it renders as an h2 to keep heading order valid. */}
+        {eyebrow &&
+          (headline ? (
+            <p className="font-mono text-eyebrow uppercase text-gray-500">{eyebrow}</p>
+          ) : (
+            <h2 className="font-mono text-eyebrow uppercase text-gray-500">{eyebrow}</h2>
+          ))}
         {headline && (
           <Reveal
             lines={[headline]}
