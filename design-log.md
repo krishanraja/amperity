@@ -164,6 +164,31 @@ with zero console errors.
   footer. The template carries both real (Alaska) and stubbed (Citizen)
   stories from one component. No changes.
 
+## Run 2, Phase 2 (one cycle each)
+
+- Identity Resolution (flagship): hero over the node field at 2x density
+  (dense, annotated, per brief), Alaska 2.3x accuracy stat feature, a
+  2-col points grid for Stitch/AmpID/matching/auditability. The denser
+  field reads as "more records to resolve," reinforcing the page. No
+  changes.
+- Customer 360 and AmpAI reuse the coded product moments (ResolutionView,
+  AmpAIExchange) as their credibility anchor, exactly as the homepage
+  chapters do. The AmpAI agent section pairs the honest positioning line
+  with the MCP diagram: mono labels, 1.5px strokes, chartreuse only on
+  the context layer and MCP server (the live path), gray agent nodes.
+  Verified the diagram reads the argument at a glance. No changes.
+- Industry template, seven instances: hotels checked in full. Featured
+  stat in the hero, the three fragmented systems in the industry's own
+  abbreviations (PMS/CRS/LOYALTY), three use-case cards, the Wyndham
+  customer feature with seeded StoryArt, the ported FAQ (IROPS, OTA,
+  true-VIP), CTA. One template renders all seven from data with distinct
+  vocabulary. No changes.
+- Use-case and integration grids: two-axis filtering (category and
+  industry / category and search) with framer layout reflow, empty-state
+  messaging, and mobile chip rows that scroll with a partial next chip.
+  Integrations render as mono text chips, never hand-drawn trademarks.
+  No changes.
+
 ## Header states (cycle 1)
 
 - Transparent over the dark hero with the official white wordmark;
