@@ -21,9 +21,9 @@ export async function generateMetadata({
     openGraph: {
       title: data.headlineLines.join(" "),
       description: data.metaDescription,
-      images: [{ url: "/og/platform.png", width: 1200, height: 630 }],
+      images: [{ url: "/og/solutions.png", width: 1200, height: 630 }],
     },
-    twitter: { card: "summary_large_image", images: ["/og/platform.png"] },
+    twitter: { card: "summary_large_image", images: ["/og/solutions.png"] },
   };
 }
 

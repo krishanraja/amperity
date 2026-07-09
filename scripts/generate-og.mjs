@@ -167,6 +167,24 @@ const templates = [
     title: "Pay for what you use. Get everything.",
     seed: 53,
   },
+  {
+    file: "identity.png",
+    eyebrow: "Identity Resolution",
+    title: "When identity is wrong, everything built on it is wrong.",
+    seed: 71,
+  },
+  {
+    file: "ampai.png",
+    eyebrow: "AmpAI",
+    title: "AI that starts from the truth.",
+    seed: 89,
+  },
+  {
+    file: "solutions.png",
+    eyebrow: "Solutions",
+    title: "Trusted context, shaped to your work.",
+    seed: 101,
+  },
 ];
 
 for (const t of templates) {

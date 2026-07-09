@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Use cases",
     description: "What trusted customer context makes possible.",
-    images: [{ url: "/og/platform.png", width: 1200, height: 630 }],
+    images: [{ url: "/og/solutions.png", width: 1200, height: 630 }],
   },
-  twitter: { card: "summary_large_image", images: ["/og/platform.png"] },
+  twitter: { card: "summary_large_image", images: ["/og/solutions.png"] },
 };
 
 export default function UseCasesPage() {

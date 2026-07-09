@@ -118,13 +118,13 @@ export function Header() {
             href="https://login.amperity.com/"
             target="_blank"
             rel="noreferrer noopener"
-            className={`text-body-sm font-medium ${
+            className={`flex min-h-11 items-center text-body-sm font-medium ${
               solid ? "text-gray-700 hover:text-black" : "text-gray-100 hover:text-white"
             }`}
           >
             Login
           </a>
-          <Button href="/resources/demo/request" magnetic className="min-h-10 px-6 text-body-sm">
+          <Button href="/resources/demo/request" magnetic className="min-h-11 px-6 text-body-sm">
             Request a demo
           </Button>
         </div>

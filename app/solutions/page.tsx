@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Solutions",
     description: "Trusted customer context for every function and every industry.",
-    images: [{ url: "/og/platform.png", width: 1200, height: 630 }],
+    images: [{ url: "/og/solutions.png", width: 1200, height: 630 }],
   },
-  twitter: { card: "summary_large_image", images: ["/og/platform.png"] },
+  twitter: { card: "summary_large_image", images: ["/og/solutions.png"] },
 };
 
 export default function SolutionsIndexPage() {

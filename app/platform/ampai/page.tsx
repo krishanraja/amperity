@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI that starts from the truth.",
     description: ampaiPage.hero.subhead,
-    images: [{ url: "/og/platform.png", width: 1200, height: 630 }],
+    images: [{ url: "/og/ampai.png", width: 1200, height: 630 }],
   },
-  twitter: { card: "summary_large_image", images: ["/og/platform.png"] },
+  twitter: { card: "summary_large_image", images: ["/og/ampai.png"] },
 };
 
 export default function AmpAIPage() {

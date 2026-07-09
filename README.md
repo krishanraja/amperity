@@ -70,6 +70,29 @@ npm run generate:og          # OG images from the node-field system
   fetches). Everything else visual on the site is generated in-repo:
   node fields, diagrams, icons, favicons, OG images.
 
+## Routes
+
+Every route from the site architecture is built and statically
+generated (44 pages):
+
+- `/` homepage
+- `/platform/customer-context-platform`, `/platform/identity-resolution`,
+  `/platform/amp360`, `/platform/ampai`, `/platform/services`
+- `/pricing`
+- `/solutions`, `/solutions/departments/{marketing,analytics,it}`,
+  `/solutions/industries/{retail,travel-hospitality,hotels,airlines,
+  financial-services,restaurants,sports-entertainment}`,
+  `/solutions/use-cases`
+- `/customers`, `/customers/[slug]` (13 stories)
+- `/integrations`
+- `/resources`, `/about`, `/careers`
+- `/contact-sales`, `/resources/demo/request`
+- `/dev/icons`, `/dev/product` (hidden QA pages, noindex)
+
+The seven industry pages and three function pages are data-driven
+instances of one template each (`components/templates/IndustryPage.tsx`,
+`FunctionPage.tsx`); customer stories share `CustomerStoryPage.tsx`.
+
 ## TODO
 
 - [ ] Logo train: Brooks Running, Citizen, New Look, and BECU SVGs were
@@ -77,17 +100,30 @@ npm run generate:og          # OG images from the node-field system
       chips per the brief's fallback. Swap in official SVGs when
       amperity.com/storybook is reachable.
 - [ ] Integration logos (Databricks, Snowflake, etc.) render as mono
-      text chips in the dark architecture section; fetch official marks
-      if a licensed source becomes available. Never hand-draw them.
+      text chips in the integrations grid and the homepage architecture
+      section; fetch official marks if a licensed source becomes
+      available. Never hand-draw them.
 - [ ] Verify exact wording of the BECU (Daniel Tabor) and Brooks
       (Mark McKelvey) pull quotes against archived source pages before
       rendering them inside quotation marks (see content/stats.ts).
-- [ ] Run 2: all remaining routes (platform pages, pricing, solutions,
-      industries, customers, integrations, resources, company,
-      conversion). Nav links to those routes 404 until then, which is
-      also the only remaining Lighthouse best-practices deduction
-      (prefetch 404s in the console).
-- [ ] Lighthouse (production, this container): desktop 100 perf / 100
-      a11y / 96 bp / 100 seo, LCP 0.6s, CLS 0; mobile 95 perf (throttled
-      LCP 2.9s) / 100 / 96 / 100. Re-verify on Vercel hardware after
-      deploy; bp reaches 100 once Run-2 routes exist.
+- [ ] Customer stories for Citizen, First Hawaiian Bank, Servco,
+      Catalyst Brands, and the two anonymized brands render the shorter
+      stub template (index teaser only); populate them with verified
+      proof when available. The `full` block in content/customers.ts is
+      where real story content goes.
+- [ ] Resource cards and the careers roles link point to `#` or out to
+      amperity.com; individual resource pages are out of scope per the
+      brief.
+
+## Lighthouse (production build, this container)
+
+Measured against `next start` with the local Chromium, 4x-throttled
+mobile and desktop presets:
+
+- Homepage: desktop 100 / 100 / 100 / 100 (LCP 0.7s, CLS 0); mobile 94.
+- Platform overview, pricing, solutions, use cases, integrations,
+  identity resolution, hotels, Alaska story, customers index: 95 to 99
+  performance, with accessibility, best practices, and SEO all 100.
+
+Re-verify on Vercel hardware after deploy; throttled-mobile performance
+typically rises a few points on real infrastructure.

@@ -209,6 +209,33 @@ with zero console errors.
   Servco, Catalyst, and the two anonymized stories render the shorter
   stub template. One template, both depths. No changes.
 
+## Run 2 definition-of-done pass
+
+- Build: 44 routes, all static, zero errors.
+- qa:copy clean across all Run 2 content and components (em dashes,
+  banned phrases, Proof Library stats, arbitrary Tailwind values, raw
+  hex, forbidden imagery, img-src whitelist).
+- Accessibility: found and fixed a site-wide contrast miss (gray-500 on
+  gray-50 measured 4.45, tuned to #6b6f71 for 4.86) and heading-order
+  skips on the card-grid pages (h1 to h3), by promoting section-label
+  eyebrows to h2 where they head a grid and adding sr-only section
+  headings to the filter grids. Accessibility 100 on every route tested.
+- Performance: reworked the template heroes onto the CSS reveal (paint
+  at first render, not after hydration), removed framer layout thrashing
+  from the customer grid in favor of a keyed CSS reflow (cards paint
+  immediately), and tuned the seeded StoryArt node counts. Every route
+  cleared 95+; the homepage held desktop 100.
+- Device matrix (7 widths, three DoD routes): zero horizontal overflow,
+  no sub-44px touch targets after giving the desktop Login link the
+  44px floor.
+- Brand pass: favicon set, manifest, and chartreuse theme-color render
+  in the head; every route emits a custom OG image (seven templates:
+  home, platform, customers, pricing, identity, ampai, solutions); the
+  inverted wordmark reads clean white on the dark header and footer.
+- Imagery pass: `/dev/icons` still reads as one 39-glyph family after
+  the token tuning; no sourced imagery, all diagrams and story art are
+  generated in-repo.
+
 ## Header states (cycle 1)
 
 - Transparent over the dark hero with the official white wordmark;

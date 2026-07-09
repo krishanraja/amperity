@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "When identity is wrong, everything built on it is wrong.",
     description: identityPage.hero.subhead,
-    images: [{ url: "/og/platform.png", width: 1200, height: 630 }],
+    images: [{ url: "/og/identity.png", width: 1200, height: 630 }],
   },
-  twitter: { card: "summary_large_image", images: ["/og/platform.png"] },
+  twitter: { card: "summary_large_image", images: ["/og/identity.png"] },
 };
 
 export default function IdentityResolutionPage() {
