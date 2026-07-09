@@ -236,6 +236,40 @@ with zero console errors.
   the token tuning; no sourced imagery, all diagrams and story art are
   generated in-repo.
 
+## Redesign: The Reframe (manifesto) — before/after
+
+Before: three equal-weight text blocks stacked with large empty gaps,
+tiny floating 01/02/03 numbers doing nothing, and no expression of the
+brand's node/resolution language. It was the flattest section on the
+page despite carrying the site's thesis. Flagged by the user.
+
+After: the argument is staged as a resolving spine that enacts the
+thesis. A "THE REFRAME" mono anchor opens the section. A vertical rail,
+measured to run exactly from the first node to the last (no tail into
+empty space), carries a chartreuse line that draws down scrubbed to
+scroll. Three timeline nodes sit on the rail, one per beat, filling as
+each beat enters the reading zone (reversible). The beats rise in
+brightness across the argument, gray-400 (the old era) to gray-200 (the
+hard question) to white (the answer). The answer beat gains a real
+climax: a white lead "Amperity built the answer.", a supporting clause
+in smaller gray, and the punchline "One context layer. Zero copies."
+with a chartreuse resolved node that blooms once beside it. The third
+rail node is chartreuse, so the whole path resolves into the answer.
+
+Critique against the rubric: (a) hierarchy now has a clear peak (the
+answer) instead of three equal blocks; (b) the rail turns the former
+dead gaps into a deliberate journey between stops; (c) type tension
+reads as staged confidence, brightness carrying the argument; (d) the
+motion clarifies rather than decorates: the drawn spine is literally
+resolution happening, matching the copy; (e) mobile keeps the rail and
+nodes full-width with tiered type, its own composition, not a shrink.
+
+Verification: measured rail produces zero CLS (homepage desktop stayed
+100/100/100/100, LCP 0.7s); reduced motion renders the fully resolved
+static frame (rail drawn, all nodes filled, node 3 chartreuse) with no
+console or hydration errors; scroll probing confirmed nodes fill and
+reverse with scroll and the chartreuse line scrubs to progress.
+
 ## Header states (cycle 1)
 
 - Transparent over the dark hero with the official white wordmark;

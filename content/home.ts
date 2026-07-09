@@ -17,21 +17,24 @@ export const hero = {
 export const logoCaption = "Trusted by 400+ enterprise brands";
 
 export const manifesto = {
+  eyebrow: "THE REFRAME",
   beats: [
     {
+      label: "THE OLD ERA",
       lines: ["CDPs were built to collect", "customer data. That era is over."],
     },
     {
+      label: "THE HARD QUESTION",
       lines: ["The AI era asks a harder question:", "can your agents trust what they read?"],
     },
     {
-      lines: [
-        "Amperity built the answer.",
-        "Identity-resolved profiles, live signals,",
-        "governed access for every human",
-        "and every agent. One context layer.",
-        "Zero copies.",
-      ],
+      // The answer beat is tiered: a lead that lands, a supporting
+      // clause, and the punchline that resolves. Copy verbatim.
+      label: "THE ANSWER",
+      lines: ["Amperity built the answer."],
+      support:
+        "Identity-resolved profiles, live signals, governed access for every human and every agent.",
+      punch: ["One context layer.", "Zero copies."],
     },
   ],
 };
