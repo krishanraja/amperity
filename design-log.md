@@ -189,6 +189,26 @@ with zero console errors.
   Integrations render as mono text chips, never hand-drawn trademarks.
   No changes.
 
+## Run 2, Phase 3 (one cycle each)
+
+- Resources: type-filtered card library, cards link out. Same card
+  vocabulary as the rest of the site. No changes.
+- About: facts strip, mission body in lead type, dark recognition
+  section with the two IDC MarketScape lines. Customer-facing facts
+  only, no headcount or funding. No changes.
+- Careers: values grid plus an open-roles shell linking out, offices
+  named. No changes.
+- Conversion (contact-sales and demo request from one ConversionPage):
+  two-column, copy and bullets left, form right. Verified the full
+  interaction: inline validation fires on blur (not while typing), and
+  the success state echoes the company name back ("Thanks. We will be in
+  touch about Northwind Retail."), exactly the brief's success pattern.
+  No marketing-consent wall. No changes.
+- Remaining customer stories: Wyndham, New Look, Seahawks, Virgin
+  Atlantic, BECU, Brooks render full from data; Citizen, First Hawaiian,
+  Servco, Catalyst, and the two anonymized stories render the shorter
+  stub template. One template, both depths. No changes.
+
 ## Header states (cycle 1)
 
 - Transparent over the dark hero with the official white wordmark;
