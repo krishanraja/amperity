@@ -188,6 +188,8 @@ export const maxWidth = {
   site: "90rem", // 1440px
   /** Body copy measure */
   measure: "65ch",
+  /** Display headline measure, tight so big type wraps deliberately */
+  headline: "18ch",
 } as const;
 
 export const screens = {

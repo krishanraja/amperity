@@ -143,6 +143,27 @@ with zero console errors.
   95/100/96/100. The best-practices deduction on both is console 404s
   from prefetching Run-2 routes that do not exist yet.
 
+## Run 2, Phase 1 remainder (one cycle each)
+
+- Platform overview: four numbered chapters (Context, Intelligence,
+  Activation, Architecture), each a left-rail label + failure-mode-first
+  capability list. Hierarchy holds: the chapter title anchors, the
+  failure sentence leads each capability in lead type, the answer follows
+  in body. BECU stat feature and CTA close. Reads as one long, calm
+  argument, not a feature dump. No changes.
+- Pricing: Amps model as a 2-col card grid, dark why-usage manifesto,
+  FAQ accordion. Accordion animates height at 300ms ease-in-out-quart
+  with a synced chevron. No changes.
+- Customers index: featured Seahawks hero with two counters, then the
+  filterable grid. Each card gets a slug-seeded StoryArt header, so the
+  set is consistent yet every card is distinct. Filter chips reflow the
+  grid with a layout animation. Device truth: chips scroll horizontally
+  on mobile with a partial next chip. No changes.
+- Alaska story: tinted StoryArt hero, challenge in the customer's terms,
+  four giant mid-article counters on dark, product chips, next-story
+  footer. The template carries both real (Alaska) and stubbed (Citizen)
+  stories from one component. No changes.
+
 ## Header states (cycle 1)
 
 - Transparent over the dark hero with the official white wordmark;

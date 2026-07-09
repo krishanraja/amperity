@@ -43,6 +43,7 @@ const config: Config = {
       maxWidth: {
         site: maxWidth.site,
         measure: maxWidth.measure,
+        headline: maxWidth.headline,
       },
       scale: {
         98: "0.98",
