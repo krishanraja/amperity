@@ -64,12 +64,12 @@ export function Manifesto() {
           {/* Rail track and chartreuse progress, measured to run node 1
               to node 3. Centered on the w-12 node column (left-6). */}
           <div
-            className="absolute left-6 w-px bg-gray-700"
+            className="absolute left-4 w-px bg-gray-700 lg:left-6"
             style={rail ? { top: rail.top, height: rail.height } : { top: 0, height: 0 }}
             aria-hidden="true"
           />
           <motion.div
-            className="absolute left-6 w-px origin-top bg-chartreuse"
+            className="absolute left-4 w-px origin-top bg-chartreuse lg:left-6"
             style={{
               top: rail?.top ?? 0,
               height: rail?.height ?? 0,
@@ -82,7 +82,7 @@ export function Manifesto() {
             const last = i === beats.length - 1;
             return (
               <li key={i} className="relative flex gap-4 lg:gap-8">
-                <div className="flex w-12 shrink-0 justify-center pt-1">
+                <div className="flex w-8 shrink-0 justify-center pt-1 lg:w-12">
                   <BeatNode
                     last={last}
                     reduced={reduced}

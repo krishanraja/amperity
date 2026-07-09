@@ -68,11 +68,15 @@ export const fontSize: Record<string, FontSizeEntry> = {
   eyebrow: ["0.8125rem", { lineHeight: "1.4", letterSpacing: "0.08em" }],
   "body-sm": ["0.9rem", { lineHeight: "1.6", letterSpacing: "0" }],
   body: ["1.125rem", { lineHeight: "1.6", letterSpacing: "0" }],
-  lead: ["1.406rem", { lineHeight: "1.5", letterSpacing: "0" }],
-  h4: ["1.758rem", { lineHeight: "1.15", letterSpacing: "-0.01em" }],
-  h3: ["2.197rem", { lineHeight: "1.15", letterSpacing: "-0.0125em" }],
-  h2: ["2.747rem", { lineHeight: "1.15", letterSpacing: "-0.015em" }],
-  h1: ["3.433rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+  // Large steps clamp so they step down on phones and hit the 1.25-ratio
+  // value on desktop (the max is reached by ~900px). Mobile is its own
+  // art direction, not shrunken desktop (brief 3.7). Tracking and
+  // leading are unchanged per step.
+  lead: ["clamp(1.2rem, 0.9rem + 1.3vw, 1.406rem)", { lineHeight: "1.5", letterSpacing: "0" }],
+  h4: ["clamp(1.5rem, 1.2rem + 1.3vw, 1.758rem)", { lineHeight: "1.15", letterSpacing: "-0.01em" }],
+  h3: ["clamp(1.75rem, 1.3rem + 2vw, 2.197rem)", { lineHeight: "1.15", letterSpacing: "-0.0125em" }],
+  h2: ["clamp(2rem, 1.4rem + 2.7vw, 2.747rem)", { lineHeight: "1.15", letterSpacing: "-0.015em" }],
+  h1: ["clamp(2.35rem, 1.5rem + 3.8vw, 3.433rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
   display: ["clamp(3rem, 7vw, 6rem)", { lineHeight: "1.0", letterSpacing: "-0.03em" }],
   "display-xl": ["clamp(3.5rem, 8.5vw, 8rem)", { lineHeight: "1.0", letterSpacing: "-0.045em" }],
 };

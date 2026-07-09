@@ -12,6 +12,8 @@ type ButtonProps = {
   /** Primary CTAs get the magnetic pull and arrow nudge. */
   magnetic?: boolean;
   arrow?: boolean;
+  /** Full-width when stacked on mobile, auto-width inline from sm up. */
+  stretch?: boolean;
   className?: string;
 };
 
@@ -30,8 +32,10 @@ export function Button({
   tone = "light",
   magnetic = false,
   arrow = false,
+  stretch = false,
   className,
 }: ButtonProps) {
+  const stretchClass = stretch ? "w-full sm:w-auto" : "";
   const variants = {
     primary: "bg-chartreuse text-black hover:bg-white hover:shadow-card",
     secondary:
@@ -45,7 +49,7 @@ export function Button({
   } as const;
 
   const inner = (
-    <Link href={href} className={`${base} ${variants[variant]} ${className ?? ""}`}>
+    <Link href={href} className={`${base} ${variants[variant]} ${stretchClass} ${className ?? ""}`}>
       {children}
       {arrow && (
         <Icon
@@ -57,5 +61,9 @@ export function Button({
     </Link>
   );
 
-  return magnetic ? <Magnetic className="inline-block">{inner}</Magnetic> : inner;
+  return magnetic ? (
+    <Magnetic className={stretch ? "block w-full sm:w-auto" : "inline-block"}>{inner}</Magnetic>
+  ) : (
+    inner
+  );
 }

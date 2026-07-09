@@ -236,7 +236,7 @@ with zero console errors.
   the token tuning; no sourced imagery, all diagrams and story art are
   generated in-repo.
 
-## Redesign: The Reframe (manifesto) — before/after
+## Redesign: The Reframe (manifesto), before and after
 
 Before: three equal-weight text blocks stacked with large empty gaps,
 tiny floating 01/02/03 numbers doing nothing, and no expression of the

@@ -44,12 +44,12 @@ export function PageHero({
         {(primaryCta || secondaryCta) && (
           <div className="hero-fade hero-fade-2 mt-10 flex flex-col gap-4 sm:flex-row">
             {primaryCta && (
-              <Button href={primaryCta.href} magnetic arrow tone={dark ? "dark" : "light"}>
+              <Button href={primaryCta.href} magnetic arrow tone={dark ? "dark" : "light"} stretch>
                 {primaryCta.label}
               </Button>
             )}
             {secondaryCta && (
-              <Button href={secondaryCta.href} variant="secondary" tone={dark ? "dark" : "light"}>
+              <Button href={secondaryCta.href} variant="secondary" tone={dark ? "dark" : "light"} stretch>
                 {secondaryCta.label}
               </Button>
             )}

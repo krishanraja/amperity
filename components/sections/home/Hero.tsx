@@ -46,10 +46,10 @@ export function Hero() {
           <p className="text-body text-gray-300 md:text-lead">{hero.subhead}</p>
         </div>
         <div className="hero-fade hero-fade-2 mt-8 flex flex-col gap-4 sm:flex-row md:mt-10">
-          <Button href={hero.primaryCta.href} magnetic arrow>
+          <Button href={hero.primaryCta.href} magnetic arrow stretch>
             {hero.primaryCta.label}
           </Button>
-          <Button href={hero.secondaryCta.href} variant="secondary" tone="dark">
+          <Button href={hero.secondaryCta.href} variant="secondary" tone="dark" stretch>
             {hero.secondaryCta.label}
           </Button>
         </div>
